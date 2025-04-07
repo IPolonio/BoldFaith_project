@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&display=swap');
+*{
+    color: white;
+    background-color: #061C33;
+}
+
+.hero-content{
+    font-family:"crete round" , sans-serif ;
+    margin-left: 5rem;
+    color: #ffffff;
+    
+    background-color: #061C33;
+}
+
+.hero{
+    font-size: 3rem;
+}
+.highlight{
+   color:aqua 
+}
+
+
+@media (max-width: 360px) {
+    .hero{
+        display: flex;
+    }
+    .hero-content h1 {
+        font-size: 20px; /* Adjust text size */
+        text-align: center;
+    }
+
+    .highlight {
+        color: aqua; 
+    }
+
+    .cross-symbol {
+        font-size: 24px; /* Make the cross smaller */
+        
+    }
+}
