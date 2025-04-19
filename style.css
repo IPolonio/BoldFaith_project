@@ -117,7 +117,7 @@ h1, h2 {
 
 .service-card {
     background: #061C33;
-    border-radius: 10px;
+   
     overflow: hidden;
     text-align: center;
     margin: 0 auto;
@@ -264,20 +264,40 @@ footer * {
 
 /* Desktop styles */
 @media (min-width: 768px) {
-    .hero-content h1 {
-        font-size: 3rem;
+    .hero {
+        min-height: 30vh;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        padding-top: 3rem;
     }
-
     .hero-content {
-        text-align: left;
-        margin-left: 5rem;
+        display: flex;
+        align-items: center; 
+        justify-content: space-between; 
+        flex-wrap: wrap; 
+        gap: 20px; 
+      }
+      
+      .hero-text {
+        flex: 1;
+        max-width: 600px;
+      }
+      
+      .hero-image {
+        width: 1092px;
+        height: 639px;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+      }
+      
+      .hero-image img {
+        max-width: 100%;
+        height: auto;
+      }
+      
     }
-
-    .services-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
 /* Mobile styles */
 @media screen and (max-width: 360px) {
     .hero {
