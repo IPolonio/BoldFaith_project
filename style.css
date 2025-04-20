@@ -650,13 +650,163 @@ body {
     }
 }
 
-/* === Styles for the existing .leadership-section === */
+/* === About Us Hero Section === */
+.about-hero {
+    position: relative;
+    /* Calculate min-height subtracting body's padding-top */
+    min-height: calc(60vh - 70px); /* Adjust vh and padding-top value as needed */
+    background-image: url('/images/about_us/about_usimg.png'); /* Verify path */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    text-align: center;
+    color: white;
+    margin-bottom: 0;
+}
+
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.about-hero * {
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+}
+
+.about-hero h1 {
+    font-family: 'Crete Round', serif;
+    font-size: 2.5rem;
+    font-weight: normal;
+    margin-bottom: 2rem;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.about-hero .about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 800px;
+}
+
+.about-hero .mission-statement {
+    /* Add max-width if needed */
+    max-width: 600px;
+}
+
+.about-hero .mission-statement p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin: 0 auto 1rem;
+}
+
+
+
+.about-hero .cta-section h2 {
+    font-family: 'Crete Round', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.about-hero .ask-us-btn {
+    padding: 0.8rem 2.5rem;
+    font-size: 1rem;
+    background: white;
+    color: #061C33; /* Match header background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.about-hero .ask-us-btn:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* --- Desktop Adjustments --- */
+@media (min-width: 768px) {
+    .about-hero {
+        min-height: calc(70vh - 80px);
+        padding: 4rem 5%;
+        /* Keep align-items: center to center the title */
+        /* Keep justify-content: center to vertically center the content block */
+    }
+
+    .about-hero h1 {
+        font-size: 4rem;
+        margin-bottom: 3rem;
+        /* Title remains centered */
+    }
+
+    .about-hero .about-content {
+        flex-direction: row; /* Change to row for side-by-side */
+        justify-content: space-between; /* Space out the two divs */
+        align-items: center; /* Vertically align items in the middle */
+        width: 100%; /* Allow content to span width */
+        max-width: 1100px; /* Adjust max-width as needed */
+        gap: 3rem; /* Keep gap between items */
+        text-align: left; /* Align text left within children */
+    }
+
+    .about-hero .mission-statement {
+        flex-basis: 55%; /* Give mission statement more width */
+        max-width: none; /* Remove mobile max-width */
+        text-align: left; /* Ensure text is left-aligned */
+    }
+
+    .about-hero .mission-statement p {
+        font-size: 1.6rem; /* Larger text */
+        margin: 0; /* Remove auto margins */
+        max-width: none; /* Remove mobile max-width */
+    }
+
+    .about-hero .cta-section {
+        flex-basis: 40%; /* Adjust width for CTA */
+        text-align: center; /* Center text and button within CTA */
+    }
+
+    .about-hero .cta-section h2 {
+        font-size: 1.8rem;
+        /* Text is centered by parent */
+    }
+
+     .about-hero .ask-us-btn {
+        padding: 1rem 3rem;
+        font-size: 1.1rem;
+        /* Button is centered by parent */
+     }
+}
+
+/* === Styles for the .leadership-section === */
 .leadership-section {
     position: relative;
     /* Calculate min-height subtracting body's padding-top */
     min-height: calc(80vh - 70px); /* Adjust 70px if body padding-top is different */
-    /* This line sets the background image */
-    background-image: url('/images/leadership/L.png'); /* Verify this path is correct */
+    background-image: url('/images/leadership/L.png'); /* Verify this path */
     background-size: cover;
     background-position: center bottom;
     background-repeat: no-repeat;
@@ -668,7 +818,8 @@ body {
     padding: 3rem 2rem 4rem;
     text-align: center;
     color: white; /* Default text color */
-    margin-bottom: 0; /* Add this line to remove bottom margin */
+    margin-bottom: 0; /* Ensure no bottom margin */
+    overflow: hidden; /* Help contain children */
 }
 
 /* Ensure children don't inherit unwanted backgrounds */
@@ -728,7 +879,7 @@ body {
     background-color: #f0f0f0; /* Slight hover effect */
 }
 
-/* --- Desktop Adjustments --- */
+/* --- Desktop Adjustments for Leadership Section --- */
 @media (min-width: 768px) {
     .leadership-section {
         /* Adjust min-height calculation for desktop body padding */
@@ -765,4 +916,476 @@ body {
      }
 }
 
-/* ... other styles ... */
+/* Footer styles */
+footer {
+    background-color: #0A0A0A;
+    padding: 2rem 1rem;
+    margin-top: 0; /* Ensure this is 0 or remove the line if it was setting a positive value */
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+footer * {
+    background-color: #0A0A0A;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+.footer-column {
+    margin-bottom: 1.5rem;
+    min-width: 120px;
+}
+
+.footer-column h4 {
+    font-family: 'Crete Round', serif;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.footer-column a {
+    display: block;
+    color: #cccccc;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.social-links h4 {
+    font-family: 'Crete Round', serif;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.footer-signup {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.footer-signup h4 {
+    font-family: 'Crete Round', serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.highlight-text {
+    color: aqua;
+}
+
+.footer-btn {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+    background: white;
+    color: #061C33;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #999999;
+    padding-top: 1rem;
+    border-top: 1px solid #333333;
+}
+
+/* Desktop styles */
+/* Hero Section - Desktop Improvements */
+@media (min-width: 768px) {
+    .hero {
+        min-height: 100vh;
+        padding: 0;
+        overflow: visible;
+        position: relative;
+        display: flex;
+        align-items: center;
+        background-color: #061C33;
+    }
+    
+    .hero-content {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        z-index: 2;
+        display: flex;
+        overflow: visible;
+    }
+    
+    .hero-text {
+        
+        text-align: center;
+        z-index: 3;
+        padding-left: 5%;
+        margin-top: -2rem;
+        position: relative;
+    }
+    
+    .hero-text h1 {
+        background: transparent;
+        font-size: 3rem; /* 48px equivalent in rems */
+        line-height: 1.2;
+    }
+    
+    .hero-text .cross-symbol {
+        
+      background: transparent;
+        text-align: center;
+    }
+    
+    .hero-image {
+        position: absolute;
+        right: -50px;
+        top: 50%;
+        transform: translateY(-38%);
+        z-index: 1;
+        overflow: visible;
+        background: transparent;
+    }
+    
+    .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center right;
+        background: transparent;
+    }
+    
+    .cross-symbol {
+        font-size: 4rem;
+        margin-top: 1rem;
+        text-align: left;
+    }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 360px) {
+    .hero {
+        min-height: 80vh;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        padding-top: 6rem;
+    }
+    
+
+    .hero-content {
+        margin-bottom: 100px;
+        padding: 0;
+        width: 100%;
+        margin-top: 3rem;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+
+    .cross-symbol {
+        font-size: 3rem;
+        margin-top: 1rem;
+        text-align: center; /* Changed from left to center */
+        width: 100%; /* Added to ensure full width */
+        display: block; /* Added to ensure block display */
+    }
+
+    .mission {
+        padding: 2rem 0.5rem;
+    }
+
+    .mission h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .mission p {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .services {
+        padding: 2rem 0.5rem;
+    }
+
+    .services h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .services-grid {
+        gap: 0.5rem;
+        padding: 0;
+    }
+
+    .service-card {
+        margin-bottom: 1rem;
+    }
+
+    .service-card img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .service-card h3 {
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+
+    .newsletter {
+        padding: 2rem 0.5rem;
+    }
+
+    .newsletter h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .subscribe-btn {
+        margin-top: 1rem;
+        padding: 0.6rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .footer-links {
+        display: none;
+    }
+    
+    .social-links {
+        margin-top: 1.5rem;
+    }
+    
+    .mission, .services, .newsletter {
+        padding: 1rem 0;
+        width: 100%;
+    }
+
+}
+
+/* Mission Section Desktop Styles */
+@media (min-width: 768px) {
+    .mission {
+        position: relative;
+        padding: 4rem 2rem;
+    }
+    
+    .mission-desktop-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        max-width: 800px;
+        margin: 2rem auto 0;
+    }
+    
+    .desktop-image {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        object-fit: cover;
+    }
+    
+    .hands-image {
+        margin-top: 1rem;
+    }
+}
+
+/* Hide desktop images on mobile */
+.mission-desktop-images {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .mission-desktop-images {
+        display: grid;
+    }
+}
+
+/* === Body Padding (Ensure this is present) === */
+body {
+    padding-top: 70px; /* Adjust based on actual navbar height */
+}
+@media (min-width: 768px) {
+    body {
+        padding-top: 80px; /* Adjust desktop navbar height if different */
+    }
+}
+
+/* === About Us Hero Section === */
+.about-hero {
+    position: relative;
+    /* Calculate min-height subtracting body's padding-top */
+    min-height: calc(60vh - 70px); /* Adjust vh and padding-top value as needed */
+    background-image: url('/images/about_us/about_usimg.png'); /* Verify path */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    text-align: center;
+    color: white;
+    margin-bottom: 0;
+}
+
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.about-hero * {
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+}
+
+.about-hero h1 {
+    font-family: 'Crete Round', serif;
+    font-size: 2.5rem;
+    font-weight: normal;
+    margin-bottom: 2rem;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.about-hero .about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 800px;
+}
+
+.about-hero .mission-statement {
+    /* Add max-width if needed */
+    max-width: 600px;
+}
+
+.about-hero .mission-statement p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin: 0 auto 1rem;
+}
+
+.about-hero .cta-section {
+    /* Styles for the CTA section if needed */
+}
+
+.about-hero .cta-section h2 {
+    font-family: 'Crete Round', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.about-hero .ask-us-btn {
+    padding: 0.8rem 2.5rem;
+    font-size: 1rem;
+    background: white;
+    color: #061C33; /* Match header background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.about-hero .ask-us-btn:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* --- Desktop Adjustments --- */
+@media (min-width: 768px) {
+    .about-hero {
+        min-height: calc(70vh - 80px);
+        padding: 4rem 5%;
+        /* Keep align-items: center to center the title */
+        /* Keep justify-content: center to vertically center the content block */
+    }
+
+    .about-hero h1 {
+        font-size: 4rem;
+        margin-bottom: 3rem;
+        /* Title remains centered */
+    }
+
+    .about-hero .about-content {
+        flex-direction: row; /* Change to row for side-by-side */
+        justify-content: space-between; /* Space out the two divs */
+        align-items: center; /* Vertically align items in the middle */
+        width: 100%; /* Allow content to span width */
+        max-width: 1100px; /* Adjust max-width as needed */
+        gap: 3rem; /* Keep gap between items */
+        text-align: left; /* Align text left within children */
+    }
+
+    .about-hero .mission-statement {
+        flex-basis: 55%; /* Give mission statement more width */
+        max-width: none; /* Remove mobile max-width */
+        text-align: left; /* Ensure text is left-aligned */
+    }
+
+    .about-hero .mission-statement p {
+        font-size: 1.6rem; /* Larger text */
+        margin: 0; /* Remove auto margins */
+        max-width: none; /* Remove mobile max-width */
+    }
+
+    .about-hero .cta-section {
+        flex-basis: 40%; /* Adjust width for CTA */
+        text-align: center; /* Center text and button within CTA */
+    }
+
+    .about-hero .cta-section h2 {
+        font-size: 1.8rem;
+        /* Text is centered by parent */
+    }
+
+     .about-hero .ask-us-btn {
+        padding: 1rem 3rem;
+        font-size: 1.1rem;
+        /* Button is centered by parent */
+     }
+}

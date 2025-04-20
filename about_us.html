@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BoldFaith - About Us</title>
-    <script src="/js/nav.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BoldFaith - About Us</title> <!-- Updated Title -->
+        <script src="/js/nav.js" defer></script> <!-- Added defer -->
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Added Google Fonts Link -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
 <body>
-    <!-- Navigation -->
+    <!-- Added Navbar Structure -->
     
+    </header>
 
     <!-- About Us Hero Section -->
     <section class="about-hero">
@@ -18,7 +24,7 @@
             <div class="mission-statement">
                 <p>We are a digitally oriented solution for people who cannot physically attend the ministry, bringing faith to you through technology as our main asset.</p>
             </div>
-            <img src="/images/Plant.png" alt="" srcset="">
+            <!-- Removed img tag -->
             <div class="cta-section">
                 <h2>More questions ?</h2>
                 <button class="ask-us-btn">Ask us</button>
@@ -26,52 +32,55 @@
         </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <p>To stay informed</p>
-        <h2>Sign up for our</h2>
-        <h2><span class="highlight">Updates</span></h2>
-        <button class="subscribe-btn">Subscribe</button>
-    </section>
-
-    <!-- Footer -->
+ 
+    <!-- Footer - Updated Structure -->
     <footer>
-        <div class="footer-links">
-            <div class="footer-column">
-                <h4>Events</h4>
-                <a href="#dates">Dates</a>
-                <a href="#proposal">Event Proposal</a>
+        <div class="footer-main">
+            <!-- Sign up section -->
+            <div class="footer-signup">
+                <p class="signup-intro">To stay informed</p>
+                <h4>Sign up for our</h4>
+                <h4 class="highlight-text">Updates</h4>
+                <button class="footer-btn">Subscribe</button>
             </div>
-            <div class="footer-column">
-                <h4>Leadership</h4>
-                <a href="#be-leader">Be a leader</a>
+            <!-- Links section -->
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Events</h4>
+                    <a href="#dates">Dates</a>
+                    <a href="#proposal">Event Proposal</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Leadership</h4>
+                    <a href="leadership.html">Be a leader</a> <!-- Link to page -->
+                </div>
+                <div class="footer-column">
+                    <h4>Service</h4>
+                    <a href="#volunteering">Volunteering</a>
+                    <a href="#church-team">Church team</a>
+                </div>
+                <div class="footer-column">
+                    <h4>About us</h4>
+                    <a href="about_us.html">Learn</a> <!-- Link to page -->
+                    <a href="#be-part">Be part of us</a>
+                </div>
             </div>
-            <div class="footer-column">
-                <h4>Service</h4>
-                <a href="#volunteering">Volunteering</a>
-                <a href="#church-team">Church team</a>
+            <!-- Social media links -->
+            <div class="social-links">
+                <h4>Follow us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
             </div>
-            <div class="footer-column">
-                <h4>About us</h4>
-                <a href="#learn">Learn</a>
-                <a href="#be-part">Be part of us</a>
-            </div>
-        </div>
-
-        <div class="social-links">
-            <h4>Follow us</h4>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-            </div>
-        </div>
-
+        </div> <!-- End of footer-main -->
+        <!-- Copyright section -->
         <div class="copyright">
-            <p>© 2000 · Company, Inc. All rights reserved. Address Address</p>
+            <p>© 2025 · Company, Inc. All rights reserved. Address Address</p> <!-- Updated Year -->
         </div>
     </footer>
-    
+
 </body>
 </html>
