@@ -22,19 +22,46 @@
                 <source media="(max-width: 360px)" srcset="/images/people_mobile.png"> 
                 <img src="/images/people_big.png" alt="People worshipping">
             </picture>
+            
         </div>
     </section>
-
-    <!-- Mission Section -->
+    
     <section class="mission">
-        <h2>Our mission</h2>
-        <p> To share God's love,<br>
-           serve our community,<br>
-           and grow together in<br>
-           faith.</p>
-           <img src="images/Plant.png" alt="Plant image" class="mission-plant">
+        <div class="mission-content">
+            <div class="mission-text">
+                <h2>Our mission</h2>
+                <p> to share God's love,<br>
+                   serve our community,<br>
+                   and grow together in<br>
+                   faith.</p>
+            </div>
+            
+            <!-- Desktop Image Grid -->
+            <div class="mission-image-grid">
+                <!-- Left Column Stack -->
+                <div class="grid-stack-left">
+                  
+                    <img src="/images/service-section/Group 1350.png" alt="king" class="grid-img img-king"> <!-- Moved king image up -->
+                    <img src="/images/service-section/Mask group.png" alt="sing" class="grid-img img-sing"> <!-- Moved sing image down -->
+                </div>
+                <!-- Right Column Image -->
+                <img src="/images/Plant.png" alt="plant" class="grid-img img-plant-right">
+            </div>
+            
+            <!-- Mobile Plant Image -->
+            <div class="mobile-plant-container">
+                 <img src="/images/Plant.png" alt="plant" class="mobile-plant-img">
+            </div>
+        </div>
+        
+        <!-- Praying Hands (Desktop) -->
+        <div class="praying-hands-container">
+            <img src="/images/service-section/Hands.png" alt="Praying hands" class="praying-hands-img">
+        </div>
     </section>
-
+    <section class="container">
+        <div class="wave"></div>
+      </section>
     <!-- Services Section -->
     <section class="services">
         <h2>Services</h2>
@@ -59,44 +86,48 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-links">
-            <div class="footer-column">
-                <h4>Events</h4>
-                <a href="#dates">Dates</a>
-                <a href="#proposal">Event Proposal</a>
+        <!-- Add a wrapper for the main content -->
+        <div class="footer-main">
+            <!-- Sign up section in footer -->
+            <div class="footer-signup">
+                <p class="signup-intro">To stay informed</p> <!-- Added intro text -->
+                <h4>Sign up for our</h4>
+                <h4 class="highlight-text">Updates</h4>
+                <button class="footer-btn">Subscribe</button>
             </div>
-            <div class="footer-column">
-                <h4>Leadership</h4>
-                <a href="#be-leader">Be a leader</a>
-            </div>
-            <div class="footer-column">
-                <h4>Service</h4>
-                <a href="#volunteering">Volunteering</a>
-                <a href="#church-team">Church team</a>
-            </div>
-            <div class="footer-column">
-                <h4>About us</h4>
-                <a href="#learn">Learn</a>
-                <a href="#be-part">Be part of us</a>
-            </div>
-        </div>
 
-        <div class="social-links">
-            <h4>Follow us</h4>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Events</h4>
+                    <a href="#dates">Dates</a>
+                    <a href="#proposal">Event Proposal</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Leadership</h4>
+                    <a href="#be-leader">Be a leader</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Service</h4>
+                    <a href="#volunteering">Volunteering</a>
+                    <a href="#church-team">Church team</a>
+                </div>
+                <div class="footer-column">
+                    <h4>About us</h4>
+                    <a href="#learn">Learn</a>
+                    <a href="#be-part">Be part of us</a>
+                </div>
             </div>
-        </div>
 
-        <!-- Sign up section in footer -->
-        <div class="footer-signup">
-            <h4>Sign up for our</h4>
-            <h4 class="highlight-text">Updates</h4>
-            <button class="footer-btn">Subscribe</button>
-        </div>
+            <div class="social-links">
+                <h4>Follow us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div> <!-- End of footer-main wrapper -->
 
         <div class="copyright">
             <p>© 2025 · Company, Inc. All rights reserved. Address Address</p>

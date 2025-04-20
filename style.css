@@ -27,9 +27,12 @@ h1, h2 {
     color: aqua;
 }
 
+
+
+
 /* Hero Section */
 .hero {
-    min-height: 100vh;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +40,7 @@ h1, h2 {
     margin: 0;
     position: relative;
     overflow: hidden;
-    padding-top: 80px;
+    
 }
 
 .hero-content {
@@ -45,8 +48,7 @@ h1, h2 {
     z-index: 2;
     font-family: "Crete Round", sans-serif;
     text-align: center;
-    padding: 0 1rem;
-    margin-top: 3rem;
+    
 }
 
 .hero-content h1 {
@@ -56,13 +58,13 @@ h1, h2 {
 
 .hero-content img {
     max-width: 100%;
-    width: 100%;
     height: auto;
     display: block;
     object-fit: cover;
     margin: 0;
     padding: 0;
     border: none;
+    
 }
 
 .cross-symbol {
@@ -70,21 +72,170 @@ h1, h2 {
 }
 
 /* Mission Section */
+/* Mission Section General Styles */
 .mission {
-    padding: 1rem 1rem;
-    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #0A3259; /* Darker blue background */
+    position: relative;
+    overflow: hidden; /* Contain absolutely positioned elements */
 }
 
-.mission h2 {
-    font-size: 4rem;
+.mission * {
+    background-color: transparent; /* Ensure children don't inherit the main background */
+    color: white; /* Default text color */
+}
+
+.mission-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.mission-text {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.mission-text h2 {
+    font-family: 'Raleway',;
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
 }
 
-.mission p {
+.mission-text p {
     font-family: 'Raleway', sans-serif;
     font-style: italic;
     font-size: 1.2rem;
     line-height: 1.6;
+}
+
+/* Hide desktop grid and praying hands on mobile */
+.mission-image-grid {
+    display: none;
+}
+.praying-hands-container {
+    display: none;
+}
+
+/* Show mobile plant image */
+.mobile-plant-container {
+    display: block;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+.mobile-plant-img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 15px; /* Optional rounding */
+}
+
+
+/* Desktop Styles (min-width: 768px) */
+@media (min-width: 768px) {
+    .mission {
+        padding: 4rem 2rem 6rem; /* Add padding at bottom for hands */
+    }
+
+    .mission-content {
+        flex-direction: row;
+        align-items: flex-start; /* Align items to the top */
+        justify-content: space-between;
+        position: relative; /* Ensure this is the positioning context for hands */
+    }
+
+    .mission-text {
+        width: 35%; /* Adjust width as needed */
+        text-align: center; /* Changed from center to left */
+        margin-bottom: 0;
+        padding-right: 2rem; /* Space between text and images */
+    }
+
+    .mission-text h2 {
+        font-size: 3rem;
+    }
+
+    .mission-text p {
+        font-size: 1.5rem;
+        line-height: 1.8;
+        text-align: center; /* Added text justification */
+    }
+
+    /* Hide mobile plant */
+    .mobile-plant-container {
+        display: none;
+    }
+
+    /* Show and style desktop grid */
+    .mission-image-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two equal columns */
+        grid-template-rows: auto; /* Single row, height determined by tallest column */
+        gap: 1rem; /* Space between grid items */
+        width: 60%; /* Adjust width as needed */
+        align-items: start; /* Align grid items to the top */
+    }
+
+    /* Container for the stacked images in the left cell */
+    .grid-stack-left {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2; /* Ensure it's in the first row */
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Space between stacked images */
+    }
+
+    /* Style for the plant image in the right cell */
+    .img-plant-right {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2; /* Ensure it's in the first row */
+        height: 100%; /* Make plant image fill the cell height */
+    }
+
+    /* REMOVED Style for the bottom spanning image */
+    /* .img-bottom { ... } */
+
+    /* General image styling within the grid */
+    .mission-image-grid .grid-img {
+        width: 100%;
+        height: auto; /* Let aspect ratio determine height by default */
+        object-fit: cover;
+        border-radius: 20px;
+        display: block;
+    }
+    
+    /* Ensure images within the stack also fit their container */
+    .grid-stack-left .grid-img {
+       height: auto; 
+    }
+
+    /* Specific override for the plant image to fill height */
+     .img-plant-right {
+        height: 100%; 
+     }
+
+    /* REMOVE or comment out old specific image classes if they exist */
+    /* .img-top-left { ... } */
+    /* .img-top-right { ... } */
+
+
+    /* Show and style praying hands */
+    .praying-hands-container {
+        display: block;
+        position: absolute;
+        bottom: -20px; /* Adjusted from -50px to reduce space below text */
+        left: 7rem; /* Changed from 0 to move slightly right */
+        /* transform: translateX(0); */
+        z-index: 2; /* Ensure it's above the background */
+    }
+
+    .praying-hands-img {
+        width: 484px; /* Updated width based on image dimensions */
+        height: auto; /* Maintain aspect ratio */
+    }
 }
 
 .mission-plant {
@@ -113,14 +264,28 @@ h1, h2 {
     padding: 0;
     width: 100%;
     max-width: 100%;
+    /* Default is single column implicitly */
 }
+
+/* Add desktop styles for services grid */
+@media (min-width: 768px) {
+    .services {
+        padding: 4rem 2rem; /* Adjust padding for desktop if needed */
+    }
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
+        max-width: 1200px; /* Optional: constrain width on large screens */
+        margin: 0 auto; /* Center the grid container if max-width is applied */
+    }
+}
+
 
 .service-card {
     background: #061C33;
    
     overflow: hidden;
     text-align: center;
-    margin: 0 auto;
+    margin: 0 auto; /* Centers card within its grid cell if needed */
 }
 
 .service-card img {
@@ -168,7 +333,7 @@ h1, h2 {
 footer {
     background-color: #0A0A0A;
     padding: 2rem 1rem;
-    margin-top: 2rem;
+    margin-top: 0; /* Ensure this is 0 or remove the line if it was setting a positive value */
     width: 100%;
     max-width: 100%;
     overflow: hidden;
@@ -263,41 +428,75 @@ footer * {
 }
 
 /* Desktop styles */
+/* Hero Section - Desktop Improvements */
 @media (min-width: 768px) {
     .hero {
-        min-height: 30vh;
+        min-height: 100vh;
         padding: 0;
-        margin: 0;
-        width: 100%;
-        padding-top: 3rem;
+        overflow: visible;
+        position: relative;
+        display: flex;
+        align-items: center;
+        background-color: #061C33;
     }
+    
     .hero-content {
-        display: flex;
-        align-items: center; 
-        justify-content: space-between; 
-        flex-wrap: wrap; 
-        gap: 20px; 
-      }
-      
-      .hero-text {
-        flex: 1;
-        max-width: 600px;
-      }
-      
-      .hero-image {
-        width: 1092px;
-        height: 639px;
-        flex: 1;
-        display: flex;
-        justify-content: center;
-      }
-      
-      .hero-image img {
+        position: relative;
+        width: 100%;
         max-width: 100%;
-        height: auto;
-      }
-      
+        margin: 0;
+        padding: 0;
+        z-index: 2;
+        display: flex;
+        overflow: visible;
     }
+    
+    .hero-text {
+        
+        text-align: center;
+        z-index: 3;
+        padding-left: 5%;
+        margin-top: -2rem;
+        position: relative;
+    }
+    
+    .hero-text h1 {
+        background: transparent;
+        font-size: 3rem; /* 48px equivalent in rems */
+        line-height: 1.2;
+    }
+    
+    .hero-text .cross-symbol {
+        
+      background: transparent;
+        text-align: center;
+    }
+    
+    .hero-image {
+        position: absolute;
+        right: -50px;
+        top: 50%;
+        transform: translateY(-38%);
+        z-index: 1;
+        overflow: visible;
+        background: transparent;
+    }
+    
+    .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center right;
+        background: transparent;
+    }
+    
+    .cross-symbol {
+        font-size: 4rem;
+        margin-top: 1rem;
+        text-align: left;
+    }
+}
+
 /* Mobile styles */
 @media screen and (max-width: 360px) {
     .hero {
@@ -307,6 +506,7 @@ footer * {
         width: 100%;
         padding-top: 6rem;
     }
+    
 
     .hero-content {
         margin-bottom: 100px;
@@ -325,6 +525,9 @@ footer * {
     .cross-symbol {
         font-size: 3rem;
         margin-top: 1rem;
+        text-align: center; /* Changed from left to center */
+        width: 100%; /* Added to ensure full width */
+        display: block; /* Added to ensure block display */
     }
 
     .mission {
@@ -396,4 +599,170 @@ footer * {
         padding: 1rem 0;
         width: 100%;
     }
+
 }
+
+/* Mission Section Desktop Styles */
+@media (min-width: 768px) {
+    .mission {
+        position: relative;
+        padding: 4rem 2rem;
+    }
+    
+    .mission-desktop-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        max-width: 800px;
+        margin: 2rem auto 0;
+    }
+    
+    .desktop-image {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        object-fit: cover;
+    }
+    
+    .hands-image {
+        margin-top: 1rem;
+    }
+}
+
+/* Hide desktop images on mobile */
+.mission-desktop-images {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .mission-desktop-images {
+        display: grid;
+    }
+}
+
+/* === Body Padding (Ensure this is present) === */
+body {
+    padding-top: 70px; /* Adjust based on actual navbar height */
+}
+@media (min-width: 768px) {
+    body {
+        padding-top: 80px; /* Adjust desktop navbar height if different */
+    }
+}
+
+/* === Styles for the existing .leadership-section === */
+.leadership-section {
+    position: relative;
+    /* Calculate min-height subtracting body's padding-top */
+    min-height: calc(80vh - 70px); /* Adjust 70px if body padding-top is different */
+    /* This line sets the background image */
+    background-image: url('/images/leadership/L.png'); /* Verify this path is correct */
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center title horizontally */
+    justify-content: flex-start; /* Align content towards the top */
+    /* Padding: top is minimal due to body padding, adjust others as needed */
+    padding: 3rem 2rem 4rem;
+    text-align: center;
+    color: white; /* Default text color */
+    margin-bottom: 0; /* Add this line to remove bottom margin */
+}
+
+/* Ensure children don't inherit unwanted backgrounds */
+.leadership-section * {
+    background-color: transparent;
+    position: relative; /* Allow z-index if needed later */
+    z-index: 2;
+}
+
+/* Styles for the h1 inside .leader-content */
+.leadership-section .leader-content h1 {
+    font-family: 'Crete Round', serif;
+    font-size: 2.5rem; /* Mobile title size */
+    font-weight: normal;
+    margin-bottom: 2rem; /* Space below title */
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Readability shadow */
+}
+
+/* Styles for the container div */
+.leadership-section .leader-content {
+    display: flex;
+    flex-direction: column; /* Stack text/button on mobile */
+    align-items: center;
+    max-width: 500px; /* Limit width on mobile */
+    gap: 1.5rem; /* Space between text and button */
+    margin-top: 1rem; /* Space between title and this content block */
+}
+
+/* Styles for the paragraph */
+.leadership-section .leader-text {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1rem; /* Mobile text size */
+    line-height: 1.6;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Readability shadow */
+    margin-bottom: 0; /* Reset default margin */
+}
+
+/* Styles for the button */
+.leadership-section .apply-btn {
+    padding: 0.8rem 2.5rem;
+    font-size: 1rem; /* Mobile button size */
+    background: white;
+    color: #061C33; /* Match header background color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.leadership-section .apply-btn:hover {
+    background-color: #f0f0f0; /* Slight hover effect */
+}
+
+/* --- Desktop Adjustments --- */
+@media (min-width: 768px) {
+    .leadership-section {
+        /* Adjust min-height calculation for desktop body padding */
+        min-height: calc(85vh - 80px); /* Adjust 80px if desktop body padding-top is different */
+        padding: 4rem 5% 5rem; /* Adjust padding */
+        align-items: flex-start; /* Align content to left */
+        text-align: left;
+    }
+
+    .leadership-section .leader-content h1 {
+        font-size: 4rem; /* Larger title on desktop */
+        margin-bottom: 3rem;
+        align-self: center; /* Re-center title only within the section */
+    }
+
+    .leadership-section .leader-content {
+        flex-direction: row; /* Side-by-side text/button */
+        align-items: center;
+        justify-content: flex-start;
+        max-width: 90%; /* Allow more width */
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .leadership-section .leader-text {
+        font-size: 1.5rem; /* Larger text on desktop */
+        max-width: 450px; /* Limit text width */
+    }
+
+     .leadership-section .apply-btn {
+        padding: 1rem 3rem;
+        font-size: 1.2rem; /* Larger button on desktop */
+        white-space: nowrap; /* Prevent button text wrapping */
+     }
+}
+
+/* ... other styles ... */
