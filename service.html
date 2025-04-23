@@ -4,98 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BoldFaith - Service</title>
-    <script src="/js/nav.js"></script>
+    <script src="/js/nav.js" defer></script>
+    <script src="/js/slider.js" defer></script>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Added Google Fonts Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-
+<body> <!-- Added body tag -->
+    <!-- Added Navbar Structure -->
+   
+    </header>
 
     <!-- Volunteering Events Slider -->
     <section class="volunteering-slider">
+        <!-- Removed title, assuming it's not needed based on image -->
         <button class="slider-arrow prev"><i class="fas fa-chevron-left"></i></button>
         <div class="slider-container">
+            <!-- Card 1 -->
             <div class="event-card">
-                <img src="volunteer-1.jpg" alt="Green center volunteering">
+                <img src="/images/services/Rectangle 32.png" alt="Green center volunteering"> <!-- Placeholder path -->
                 <h3>Green center volunteering</h3>
-                <p>March 17, 2025</p>
-                <p>02:37 PM</p>
-                <button class="apply-btn">Apply</button>
+                <p class="event-date">March 17, 2025</p>
+                <p class="event-time">02:37 PM</p>
+                <button class="apply-btn card-apply-btn">Apply</button> <!-- Added specific class -->
             </div>
+            <!-- Card 2 -->
             <div class="event-card">
-                <img src="volunteer-2.jpg" alt="Green center volunteering">
+                <img src="/images/services/Rectangle 33.png" alt="Green center volunteering"> <!-- Placeholder path -->
                 <h3>Green center volunteering</h3>
-                <p>March 17, 2025</p>
-                <p>02:37 PM</p>
-                <button class="apply-btn">Apply</button>
+                <p class="event-date">March 17, 2025</p>
+                <p class="event-time">02:37 PM</p>
+                <button class="apply-btn card-apply-btn">Apply</button> <!-- Added specific class -->
             </div>
+            <!-- Card 3 -->
             <div class="event-card">
-                <img src="volunteer-3.jpg" alt="Green center volunteering">
+                <img src="/images/services/Rectangle 34.png" alt="Green center volunteering"> <!-- Placeholder path -->
                 <h3>Green center volunteering</h3>
-                <p>March 17, 2025</p>
-                <p>02:37 PM</p>
-                <button class="apply-btn">Apply</button>
+                <p class="event-date">March 17, 2025</p>
+                <p class="event-time">02:37 PM</p>
+                <button class="apply-btn card-apply-btn">Apply</button> <!-- Added specific class -->
             </div>
+            <!-- Card 4 -->
             <div class="event-card">
-                <img src="volunteer-4.jpg" alt="Green center volunteering">
+                <img src="/images/services/Rectangle 34.png" alt="Green center volunteering"> <!-- Placeholder path -->
                 <h3>Green center volunteering</h3>
-                <p>March 17, 2025</p>
-                <p>02:37 PM</p>
-                <button class="apply-btn">Apply</button>
+                <p class="event-date">March 17, 2025</p>
+                <p class="event-time">02:37 PM</p>
+                <button class="apply-btn card-apply-btn">Apply</button> <!-- Added specific class -->
+            </div>
+            <!-- Add more cards if needed -->
+            <div class="event-card">
+                <img src="/images/services/Rectangle 34.png" alt="Green center volunteering"> <!-- Placeholder path -->
+                <h3>Green center volunteering</h3>
+                <p class="event-date">March 17, 2025</p>
+                <p class="event-time">02:37 PM</p>
+                <button class="apply-btn card-apply-btn">Apply</button> <!-- Added specific class -->
             </div>
         </div>
         <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
     </section>
 
     <!-- Church Team Section -->
-    <section class="church-team">
+    <section class="church-team" style="background-image: url('/images/services/unsplash.png');">
         <h2>Church team</h2>
         <p>Do you want to be part of our volunteer team, Don't be shy and apply to be part of us.</p>
         <button class="apply-btn">Apply</button>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <p>To stay informed</p>
-        <h2>Sign up for our</h2>
-        <h2><span class="highlight">Updates</span></h2>
-        <button class="subscribe-btn">Subscribe</button>
-    </section>
+    <!-- Newsletter Section (Added structure based on image footer) -->
+
 
     <!-- Footer -->
     <footer>
-        <div class="footer-links">
-            <div class="footer-column">
-                <h4>Events</h4>
-                <a href="#dates">Dates</a>
-                <a href="#proposal">Event Proposal</a>
+        <!-- Add a wrapper for the main content -->
+        <div class="footer-main">
+            <!-- Sign up section in footer -->
+            <div class="footer-signup">
+                <p class="signup-intro">To stay informed</p> <!-- Added intro text -->
+                <h4>Sign up for our</h4>
+                <h4 class="highlight-text">Updates</h4>
+                <button class="footer-btn">Subscribe</button>
             </div>
-            <div class="footer-column">
-                <h4>Leadership</h4>
-                <a href="#be-leader">Be a leader</a>
-            </div>
-            <div class="footer-column">
-                <h4>Service</h4>
-                <a href="#volunteering">Volunteering</a>
-                <a href="#church-team">Church team</a>
-            </div>
-            <div class="footer-column">
-                <h4>About us</h4>
-                <a href="#learn">Learn</a>
-                <a href="#be-part">Be part of us</a>
-            </div>
-        </div>
 
-        <div class="social-links">
-            <h4>Follow us</h4>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Events</h4>
+                    <a href="#dates">Dates</a>
+                    <a href="#proposal">Event Proposal</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Leadership</h4>
+                    <a href="#be-leader">Be a leader</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Service</h4>
+                    <a href="#volunteering">Volunteering</a>
+                    <a href="#church-team">Church team</a>
+                </div>
+                <div class="footer-column">
+                    <h4>About us</h4>
+                    <a href="#learn">Learn</a>
+                    <a href="#be-part">Be part of us</a>
+                </div>
             </div>
-        </div>
+
+            <div class="social-links">
+                <h4>Follow us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div> <!-- End of footer-main wrapper -->
 
         <div class="copyright">
-            <p>© 2000 · Company, Inc. All rights reserved. Address Address</p>
+            <p>© 2025 · Isaac, Inc. All rights reserved. Address Address</p>
         </div>
     </footer>
 </body>
